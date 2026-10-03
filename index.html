@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop laptops, smart devices, accessories and modern gadgets at Lightkreation.">
+  <title>Lightkreation — Gadgets for a smarter life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="top-strip">SMART TECH. GREAT FINDS. <span>Welcome to Lightkreation</span></div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Lightkreation home"><span class="brand-mark">L<span>K</span></span><span>light<span class="brand-accent">kreation</span></span></a>
+    <form class="search-box" id="searchForm">
+      <input id="searchInput" type="search" placeholder="Search laptops, earbuds, smartwatches..." aria-label="Search products">
+      <button aria-label="Search" type="submit">⌕</button>
+    </form>
+    <div class="header-actions">
+      <button class="icon-action" id="accountButton" title="Account"><span>♙</span><small>Account</small></button>
+      <button class="icon-action cart-trigger" id="openCartButton" title="Shopping cart"><span>🛒<b id="cartCount">0</b></span><small>Cart</small></button>
+    </div>
+  </header>
+
+  <nav class="category-nav" aria-label="Product categories">
+    <button class="nav-category active" data-category="All">✦ All products</button>
+    <button class="nav-category" data-category="Laptops">▣ Laptops</button>
+    <button class="nav-category" data-category="Phones">▯ Phones</button>
+    <button class="nav-category" data-category="Audio">♫ Audio</button>
+    <button class="nav-category" data-category="Wearables">◉ Wearables</button>
+    <button class="nav-category" data-category="Accessories">⌘ Accessories</button>
+    <button class="nav-category" data-category="Smart Home">⌂ Smart home</button>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> YOUR NEXT FAVOURITE GADGET</span>
+        <h1>Make room for<br><em>what's next.</em></h1>
+        <p>Discover clever tech, everyday essentials and powerful devices made for the way you live.</p>
+        <div class="hero-buttons">
+          <button class="btn btn-dark" id="shopNowButton">Explore products <span>↗</span></button>
+          <span class="hero-note">New finds added regularly</span>
+        </div>
+        <div class="hero-perks">
+          <div><strong>01</strong><span>Tech for every day</span></div>
+          <div><strong>02</strong><span>Easy online shopping</span></div>
+          <div><strong>03</strong><span>Secure checkout setup</span></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-circle"></div>
+        <div class="floating-label label-top">NEW TECH <span>✦</span></div>
+        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1100&q=85" alt="Modern laptop on a desk" class="hero-laptop">
+        <div class="hero-product-tag"><span class="tag-icon">✦</span><span><small>THE EVERYDAY UPGRADE</small><strong>Find your next device</strong></span><span class="tag-arrow">↗</span></div>
+        <div class="floating-label label-bottom">LIGHTKREATION / 001</div>
+      </div>
+    </section>
+
+    <section class="benefit-row" aria-label="Shopping benefits">
+      <div><span class="benefit-icon">↗</span><span><strong>Curated tech</strong><small>Useful finds, all in one place</small></span></div>
+      <div><span class="benefit-icon">◇</span><span><strong>Easy checkout</strong><small>A smooth way to shop</small></span></div>
+      <div><span class="benefit-icon">⌂</span><span><strong>Order delivery</strong><small>Delivery details at checkout</small></span></div>
+      <div><span class="benefit-icon">♡</span><span><strong>Made for you</strong><small>Tech for work and play</small></span></div>
+    </section>
+
+    <section class="shop-section" id="shopSection">
+      <div class="section-heading">
+        <div><span class="section-kicker">THE LIGHTKREATION EDIT</span><h2>Find your next favourite.</h2><p>Fresh tech picks for your everyday life.</p></div>
+        <div class="sort-wrap"><label for="sortSelect">Sort by</label><select id="sortSelect"><option value="featured">Featured</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="rating">Top rated</option></select></div>
+      </div>
+      <div class="filter-pills" id="filterPills">
+        <button class="filter-pill selected" data-category="All">All finds</button>
+        <button class="filter-pill" data-category="Laptops">Laptops</button>
+        <button class="filter-pill" data-category="Phones">Phones</button>
+        <button class="filter-pill" data-category="Audio">Audio</button>
+        <button class="filter-pill" data-category="Wearables">Wearables</button>
+        <button class="filter-pill" data-category="Accessories">Accessories</button>
+        <button class="filter-pill" data-category="Smart Home">Smart home</button>
+      </div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <div class="empty-state hidden" id="emptyState"><div>⌕</div><h3>No products found</h3><p>Try another search or category.</p><button class="btn btn-dark" id="clearFiltersButton">Clear filters</button></div>
+    </section>
+
+    <section class="promo-banner">
+      <div class="promo-text"><span class="section-kicker">UPGRADE YOUR SETUP</span><h2>Small details.<br><em>Big difference.</em></h2><p>Discover accessories that make your devices work better for you.</p><button class="btn btn-light" data-shop-category="Accessories">Shop accessories <span>↗</span></button></div>
+      <div class="promo-images">
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80" alt="Wireless headphones">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80" alt="Modern wristwatch">
+        <img src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=500&q=80" alt="Wireless earbuds">
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div><span class="section-kicker">STAY IN THE LOOP</span><h2>Good tech news, occasionally.</h2><p>Sign up for product updates and new arrivals.</p></div>
+      <form id="newsletterForm"><input type="email" id="newsletterEmail" placeholder="Your email address" required><button class="btn btn-dark" type="submit">Keep me posted ↗</button></form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#"><span class="brand-mark">L<span>K</span></span><span>light<span class="brand-accent">kreation</span></span></a>
+    <p>Modern gadgets for curious minds.</p>
+    <div class="footer-links"><a href="#shopSection">Shop</a><a href="#" id="footerHelp">Help & support</a><a href="#" id="footerPolicy">Privacy & payments</a></div>
+    <small>© <span id="year"></span> Lightkreation. Demo storefront — product listings and prices are examples.</small>
+  </footer>
+
+  <div class="overlay hidden" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="drawer-header"><div><span class="section-kicker">YOUR BAG</span><h2>Shopping cart <span id="drawerCount">(0)</span></h2></div><button class="close-button" id="closeCartButton" aria-label="Close cart">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty"><div>🛍</div><h3>Your cart is waiting</h3><p>Add something clever to get started.</p><button class="btn btn-dark" id="continueShoppingButton">Continue shopping</button></div>
+    <div class="cart-summary hidden" id="cartSummary"><div><span>Subtotal</span><strong id="cartSubtotal">₦0</strong></div><div><span>Delivery</span><span class="delivery-note">Calculated at checkout</span></div><p>Taxes and delivery options are confirmed before payment.</p><button class="btn btn-dark checkout-button" id="checkoutButton">Continue to checkout <span>↗</span></button><button class="text-button" id="keepShoppingButton">Keep shopping</button></div>
+  </aside>
+
+  <section class="modal hidden" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <div class="modal-header"><div><span class="section-kicker">ALMOST YOURS</span><h2 id="checkoutTitle">Checkout</h2></div><button class="close-button" id="closeCheckoutButton" aria-label="Close checkout">×</button></div>
+    <div class="checkout-content">
+      <form id="checkoutForm">
+        <h3>Delivery details</h3>
+        <div class="form-grid"><label>First name<input name="firstName" required autocomplete="given-name"></label><label>Last name<input name="lastName" required autocomplete="family-name"></label></div>
+        <label>Email address<input type="email" name="email" required autocomplete="email"></label>
+        <label>Phone number<input type="tel" name="phone" required autocomplete="tel" placeholder="+234..."></label>
+        <label>Delivery address<textarea name="address" rows="3" required autocomplete="street-address"></textarea></label>
+        <div class="form-grid"><label>City<input name="city" required autocomplete="address-level2"></label><label>State<input name="state" required autocomplete="address-level1"></label></div>
+        <h3 class="payment-title">Payment method</h3>
+        <div class="payment-option"><span class="payment-symbol">₦</span><span><strong>Online payment</strong><small>Paystack/Flutterwave integration required</small></span><span class="payment-check">●</span></div>
+        <p class="demo-warning"><strong>Demo mode:</strong> this checkout does not collect money or create a paid order. Connect a verified payment gateway and backend before accepting real payments.</p>
+        <button type="submit" class="btn btn-dark pay-button">Review demo order <span>↗</span></button>
+      </form>
+      <div class="checkout-order"><h3>Your order</h3><div id="checkoutItems"></div><div class="checkout-total"><span>Subtotal</span><strong id="checkoutSubtotal">₦0</strong></div><p>Delivery charges will be confirmed with your order.</p></div>
+    </div>
+  </section>
+
+  <section class="modal small-modal hidden" id="messageModal" role="dialog" aria-modal="true" aria-labelledby="messageTitle">
+    <button class="close-button message-close" id="closeMessageButton" aria-label="Close message">×</button>
+    <div class="message-icon" id="messageIcon">✓</div><h2 id="messageTitle">Thank you!</h2><p id="messageText"></p><button class="btn btn-dark" id="messageOkButton">Got it</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
